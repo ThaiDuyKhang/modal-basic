@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --primary-bg-color: #bec8e4;
+  --primary-btn-color: #4b5777;
+}
+
+@media(max-width: 639.9px){
+    .Modal__inner {
+        width: 20rem!important;
+    }
+}
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background: #e4ebf5;
+}
+
+.openModal-btn {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  padding: 2rem 4rem;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.3s all;
+  color: var(--primary-btn-color);
+  background: #e4ebf5;
+  box-shadow: 4px 4px 10px #bec8e4, -4px -4px 10px #fff;
+  -webkit-box-shadow: 4px 4px 10px #bec8e4, -4px -4px 10px #fff;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.openModal-btn:hover,
+.Modal__footer .closeModal-btn:hover {
+  -webkit-appearance: none;
+  -webkit-box-shadow: 2px 2px 5px #bec8e4, -2px -2px 5px #fff;
+  box-shadow: 2px 2px 5px #bec8e4, -2px -2px 5px #fff;
+}
+
+.openModal-btn:active,
+.Modal__footer .closeModal-btn:active {
+  -webkit-appearance: none;
+  -webkit-box-shadow: inset -2px -2px 5px #fff, inset 2px 2px 5px #bec8e4;
+  box-shadow: inset -2px -2px 5px #fff, inset 2px 2px 5px #bec8e4;
+}
+
+.Modal {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #0000008f;
+}
+
+.Modal__inner {
+  border-radius: 10px;
+  width: 40rem;
+  position: relative;
+  top: 40%;
+  margin: auto;
+  background-color: white;
+  animation: modalShow 0.3s ease-in-out;
+}
+
+.Modal__header svg {
+  cursor: pointer;
+}
+.Modal__header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: var(--primary-bg-color);
+  color: var(--primary-btn-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Modal__body {
+  padding: 1rem;
+  color: #7884a5;
+  background: #e4ebf5;
+}
+
+.Modal__footer {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 1rem;
+  background: #e4ebf5;
+  text-align: right;
+}
+
+.Modal__footer .closeModal-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  color: var(--primary-btn-color);
+  background: #e4ebf5;
+  box-shadow: 4px 4px 10px #bec8e4, -4px -4px 10px #fff;
+  -webkit-box-shadow: 4px 4px 10px #bec8e4, -4px -4px 10px #fff;
+  -webkit-appearance: none;
+}
+
+.hiddenModal {
+  display: none;
+}
+
+@keyframes modalShow {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
